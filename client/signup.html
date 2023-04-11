@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+
+<style>
+    .parent
+        {
+            display: block;
+            width: 200px;
+            height: 200px;
+            padding: 2px;
+        }
+    .error
+    {
+        color:red;
+    }
+</style>
+
+</head>
+<body>
+    
+    <div class="d-flex justify-content-center align-items-center vh-100 ">
+
+        <form onsubmit="return validate()" action="signup.php" method="post" class="parent">
+
+            <h2>Registration Form</h2>
+
+            <input placeholder="Username" class="form-control1 mt-2" type="text" name="Username" id="username">
+
+            <span class="error" id="user_error"></span>
+            
+            <input placeholder="Password" class="form-control1 mt-2" type="password" name="Password1" id="password1">
+            <input placeholder="Re-Type password" class="form-control1 mt-2" type="password" name="Password2" id="password2">
+
+            <input  placeholder="Mobile number" class="form-control1 mt-2" type="number" name="mobile" id="mobile">  
+            <!-- maxlength="10" minlength="10" -->
+
+            <input class="btn btn-danger mt-3" type="submit" value="Register">
+
+        </form>
+        
+    </div>
+
+
+    <script>
+        function validate()
+        {
+            username = document.getElementById("username").value;
+            password1 = document.getElementById("password1").value;
+            password2 = document.getElementById("password2").value;
+            mobile = document.getElementById("mobile").value;
+            if(username.length==0)
+            {
+                document.getElementById('user_error').innerHTML="Username cannot be empty";
+                return false;
+
+            }
+            if(password1.length == 0 || password2.length == 0 || password1 !=password2)
+            {
+                alert("Password cannot be empty/password doesn't match");
+                return false;
+            }
+            if(mobile.length!=10)
+            {
+                alert("Mobile number should be 10 digits");
+                return false;
+            }
+            return true;
+        }
+    </script>
+
+</body>
+</html>

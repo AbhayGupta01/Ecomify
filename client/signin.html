@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+
+    <style>
+        .parent
+        {
+            display: block;
+            width: 200px;
+            height: 200px;
+            padding: 2px;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="d-flex justify-content-center align-items-center vh-100">
+        <form onsubmit="return validate()" action="signin.php" method="get" class="parent">
+
+            <h2>Login</h2>
+
+            <input placeholder="Username" class="form-control1 mt-2" type="text"  name="Username" id="username"  >
+            <span id="user_error" ></span>
+
+            <input placeholder="Password" class="form-control1 mt-2" type="password" name="Password" id="password" >
+
+            <input  type="submit" value="Login" class="btn btn-danger mt-3">
+
+        </form>
+    </div>
+
+    <script>
+        function validate()
+        {
+            username = document.getElementById("username").value;
+            password = document.getElementById("password").value;
+            if(username.length==0)
+            {
+                document.getElementById('user_error').innerHTML="Username cannot be empty";
+                return false;
+
+            }
+            if(password.length == 0)
+            {
+                alert("Password cannot be empty");
+                return false;
+            }
+            return true;
+        }
+    </script>
+
+
+
+
+
+</body>
+</html>

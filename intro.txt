@@ -1,0 +1,31 @@
+
+ADMIN
+        Manage Vendors (Add,view, edit & deactivate)
+        Manage Users (add, view, edit & deactivate)
+        Manage Orders(payment, add , view, & cancel)
+        
+VENDORS
+        Registration
+        login
+        manage products(upload, view, edit(go to the upload html with filled values) and delete)
+        manage Orders
+
+        upload
+                name
+                price
+                desc
+                image
+                
+        sql db
+CLIENT
+        Registration
+        login
+        view products (sort by price, rating)
+        manage cart 
+        view cart 
+                complete it with css card
+                show the total sum of product price
+                remove from cart
+        place Orders
+        track Orders
+        add rating
